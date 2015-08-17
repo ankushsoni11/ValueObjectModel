@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:cxf="http://camel.apache.org/schema/cxf"
+	xmlns:employee="http://mdw-servicemix.centurylink.com" xmlns:mdw="http://mdw.centurylink.com/service"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd
+					http://www.springframework.org/schema/jdbc 
+					http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd    
+    				http://cxf.apache.org/jaxws 
+    				http://cxf.apache.org/schemas/jaxws.xsd
+    			">
+
+	<bean id="searchLocationService" class="com.centurylink.icl.valueobjects.dataaccess.ValueObjectDataAccessUtilFactory">
+		<property name="testValue" value="INJECTED" />
+	</bean>
+	
+</beans>

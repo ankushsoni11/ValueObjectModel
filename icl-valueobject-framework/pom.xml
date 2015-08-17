@@ -1,0 +1,126 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>icl-valueobject-framework</artifactId>
+	<packaging>bundle</packaging>
+	<name>ICL Valueobject Framework</name>
+
+	<parent>
+		<groupId>com.centurylink.icl</groupId>
+		<artifactId>icl-app</artifactId>
+		<version>1.6-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.ops4j.pax.logging</groupId>
+			<artifactId>pax-logging-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>icl-service-hub</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>icl-common</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>icl-datamodel-cim2</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>3.0.6.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.0.6.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>3.0.6.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+		</dependency>
+		
+		<!-- Require for jdbc connection -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc14</artifactId>
+			<version>10.2.0.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>3.0.5.RELEASE</version>
+		</dependency>
+        
+		<dependency>
+			<groupId>org.apache.servicemix.bundles</groupId>
+			<artifactId>org.apache.servicemix.bundles.xmlbeans</artifactId>
+		</dependency>
+	
+		<dependency>
+			<groupId>org.apache.servicemix.bundles</groupId>
+			<artifactId>org.apache.servicemix.bundles.ehcache</artifactId>
+			<version>2.3.0_3</version>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>${maven.bundle.plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Export-Package>com.centurylink.icl.valueobjects.dataaccess,
+						com.centurylink.icl.valueobjects.exceptions,
+						com.centurylink.icl.valueobjects.impl,
+						com.centurylink.icl.valueobjects.model,
+						com.centurylink.icl.valueobjects.abs,
+						com.centurylink.icl.valueobjects.cached,
+						com.centurylink.icl.querybuilder,
+						com.centurylink.icl.querybuilder.interfaces,
+						com.centurylink.icl.querybuilder.translator,
+						com.centurylink.icl.querybuilder.translator.value
+						</Export-Package>
+						<Import-Package>com.centurylink.icl.exceptions,
+							org.springframework.jdbc.core,
+							org.springframework.jdbc.object,
+							org.springframework.dao,
+							org.springframework.jdbc.core.simple,
+							org.apache.commons.logging,
+							com.iclnbi.iclnbiV200,
+							com.centurylink.icl.common.util,
+							net.sf.ehcache
+						</Import-Package>
+						<DynamicImport-Package />
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
